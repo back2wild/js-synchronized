@@ -9,9 +9,11 @@ when one call already waiting on a Promise been fulfilled, another call may come
 just like "concurrent" in mutiple thread.
 Which make the lies of code a "critical section".
 
-There is critical section, there is synchronization. That's what this lib trying to do:
+There is critical section, there is synchronization. This lib is trying to solve these problems.
 
-> *"concurrent calls"* in the following context actullay means another call on a method
+**[Full Documentation](https://back2wild.github.io/js-synchronized)**
+
+> "*concurrent calls*" in the following context actullay means another call on a method
 started without waiting for the previous call returned Promise fulfilled
 
 ## synchronized
