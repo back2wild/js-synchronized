@@ -1,0 +1,26 @@
+{
+  "name": "js-synchronized",
+  "version": "0.0.5",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "rm -Rf dist && tsc --project ./src",
+    "test": "webpack-dev-server --config ./test/webpack.config.js",
+    "pub": "npm run build && npm publish --registry=https://registry.npmjs.org/",
+    "docs": "rm -Rf docs/ && typedoc src"
+  },
+  "keywords": [
+    "js-synchronized"
+  ],
+  "author": "albert-zhang",
+  "devDependencies": {
+    "html-webpack-plugin": "^3.2.0",
+    "ts-loader": "^6.2.1",
+    "typedoc": "^0.16.11",
+    "typedoc-plugin-markdown": "^2.2.17",
+    "typescript": "^3.8.3",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "mode": "modules",
+  "out": "docs",
+  "exclude": "src/private",
+  "excludeExternals": true,
+  "plugin": "none"
+}
