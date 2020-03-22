@@ -28,6 +28,11 @@ export function synchronized(group = '') {
           inst[promKey] = null;
         }
         return r;
+      }).catch((err) => {
+        if (waitProm === inst[promKey]) {
+          inst[promKey] = null;
+        }
+        return Promise.reject(err);
       });
     };
   };
