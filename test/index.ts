@@ -43,9 +43,27 @@ class SomeClass {
     });
     return wait;
   }
+
+  @takeLeading()
+  @synchronized('combine')
+  public async combine1(wait: number) {
+    await new Promise((resolve: any) => {
+      setTimeout(resolve, wait);
+    });
+    return wait;
+  }
+
+  @synchronized('combine')
+  public async combine2(wait: number) {
+    await new Promise((resolve: any) => {
+      setTimeout(resolve, wait);
+    });
+    return wait;
+  }
 }
 
 const obj = new SomeClass();
+
 obj.f1(3000);
 obj.f1(2000);
 obj.f1(1000);
@@ -66,3 +84,8 @@ obj.last(3000).then((r: any) => console.log('last 3000: ' + r));
 obj.first(1000).then((r: any) => console.log('first 1000: ' + r));
 obj.first(2000).then((r: any) => console.log('first 2000: ' + r));
 obj.first(3000).then((r: any) => console.log('first 3000: ' + r));
+
+obj.combine1(1000).then((r: any) => console.log('combine1 1000: ' + r));
+obj.combine1(2000).then((r: any) => console.log('combine1 2000: ' + r));
+obj.combine2(1000).then((r: any) => console.log('combine2 1000: ' + r));
+obj.combine2(2000).then((r: any) => console.log('combine2 2000: ' + r));
